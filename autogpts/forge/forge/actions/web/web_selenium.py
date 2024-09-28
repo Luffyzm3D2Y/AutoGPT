@@ -315,7 +315,7 @@ def open_page_in_browser(url: str) -> WebDriver:
     if selenium_web_browser == "firefox":
         if selenium_headless:
             options.add_argument("--headless")
-
+            options.add_argument("--disable-gpu")
         driver = FirefoxDriver(
             service=GeckoDriverService(GeckoDriverManager().install()), options=options
         )

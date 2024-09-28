@@ -256,7 +256,7 @@ class WebSeleniumComponent(DirectiveProvider, CommandProvider):
         if isinstance(options, FirefoxOptions):
             if config.selenium_headless:
                 options.add_argument("--headless")
-
+                options.add_argument("--disable-gpu")
             driver = FirefoxDriver(
                 service=GeckoDriverService(GeckoDriverManager().install()),
                 options=options,
