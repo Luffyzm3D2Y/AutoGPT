@@ -255,14 +255,8 @@ class WebSeleniumComponent(DirectiveProvider, CommandProvider):
 
         if isinstance(options, FirefoxOptions):
             if config.selenium_headless:
-                options.headless = True
-                # options.add_argument("--no-sandbox")
-                # options.add_argument("--headless")
-                # options.add_argument("--disable-gpu")
-                # not forge in remote repo
-                import pdb
+                options.add_argument("--headless")
 
-                pdb.set_trace()
             driver = FirefoxDriver(
                 service=GeckoDriverService(GeckoDriverManager().install()),
                 options=options,

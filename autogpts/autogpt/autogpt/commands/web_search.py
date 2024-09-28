@@ -80,7 +80,8 @@ class WebSearchComponent(DirectiveProvider, CommandProvider):
             if not query:
                 return json.dumps(search_results)
 
-            search_results = DDGS().text(query, max_results=num_results)
+            with DDGS() as ddgs:
+                search_results = ddgs.text(query, max_results=num_results)
 
             if search_results:
                 break
