@@ -7,7 +7,8 @@ from duckduckgo_search import DDGS
 
 from ..registry import action
 
-DUCKDUCKGO_MAX_ATTEMPTS = 3
+# DUCKDUCKGO_MAX_ATTEMPTS = 3
+DUCKDUCKGO_MAX_ATTEMPTS = 5
 
 
 @action(
@@ -46,7 +47,8 @@ async def web_search(agent, task_id: str, query: str) -> str:
         if search_results:
             break
 
-        time.sleep(1)
+        # time.sleep(1)
+        time.sleep(5)
         attempts += 1
 
     results = json.dumps(search_results, ensure_ascii=False, indent=4)

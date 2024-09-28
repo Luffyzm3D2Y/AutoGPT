@@ -12,7 +12,8 @@ from autogpt.core.utils.json_schema import JSONSchema
 from autogpt.models.command import Command
 from autogpt.utils.exceptions import ConfigurationError
 
-DUCKDUCKGO_MAX_ATTEMPTS = 3
+# DUCKDUCKGO_MAX_ATTEMPTS = 3
+DUCKDUCKGO_MAX_ATTEMPTS = 5
 
 logger = logging.getLogger(__name__)
 
@@ -84,7 +85,8 @@ class WebSearchComponent(DirectiveProvider, CommandProvider):
             if search_results:
                 break
 
-            time.sleep(1)
+            # time.sleep(1)
+            time.sleep(5)
             attempts += 1
 
         search_results = [
