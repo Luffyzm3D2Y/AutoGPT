@@ -318,6 +318,10 @@ def open_page_in_browser(url: str) -> WebDriver:
             options.add_argument("--no-sandbox")
             options.add_argument("--headless")
             options.add_argument("--disable-gpu")
+            # forge
+            import pdb
+
+            pdb.set_trace()
         driver = FirefoxDriver(
             service=GeckoDriverService(GeckoDriverManager().install()), options=options
         )
